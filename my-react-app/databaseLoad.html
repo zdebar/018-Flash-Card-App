@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test IndexedDB</title>
+</head>
+<body>
+  <h1>Test IndexedDB with Flashcards</h1>
+
+  <script>
+    // The importToIndexedDB function goes here
+    function importToIndexedDB(fileName, version = 1) {
+        const dbName = fileName;
+        const storeName = 'Vocabulary';
+
+        const request = indexedDB.open(dbName, version);
+    
+        request.onupgradeneeded = function(event) {
+            const db = event.target.result;
+
+            if (!db.objectStoreNames.contains(storeName)) {
+                db.createObjectStore(storeName, { keyPath: 'lesson' });
+            }
+        };
+    
+        request.onsuccess = async function(event) {
+        const db = event.target.result;
+    
+            try {
+                const response = await fetch(`/data/${fileName}.json`);
+                const data = await response.json();
+        
+                const transaction = db.transaction([storeName], 'readwrite');
+                const store = transaction.objectStore(storeName);
+        
+                for (const lessonKey in data) {
+                if (Object.prototype.hasOwnProperty.call(data, lessonKey)) {
+                    const lessonData = { lesson: lessonKey, ...data[lessonKey] };
+                    store.put(lessonData); 
+                }
+                }
+        
+                transaction.oncomplete = function() {
+                console.log('Data has been successfully imported to IndexedDB');
+                };
+        
+                transaction.onerror = function() {
+                console.error('Error importing data to IndexedDB');
+                };
+            } catch (error) {
+                console.error('Error fetching JSON:', error);
+            }
+        };
+    
+        request.onerror = function() {
+        console.error('Error opening IndexedDB');
+        };
+    }
+
+    // Call the function for testing
+    importToIndexedDB('cz_esp_01', 1);
+  </script>
+</body>
+</html>
