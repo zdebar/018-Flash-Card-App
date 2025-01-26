@@ -1,4 +1,4 @@
-function importToIndexedDB(fileName, version = 1) {
+export function importToIndexedDB(fileName, version = 1) {
     const dbName = fileName;
     const storeName = 'Vocabulary';
 
@@ -16,7 +16,7 @@ function importToIndexedDB(fileName, version = 1) {
       const db = event.target.result;
   
         try {
-            const response = await fetch(`/data/${fileName}.json`);
+            const response = await fetch(`../public/data/${fileName}.json`);
             const data = await response.json();
     
             const transaction = db.transaction([storeName], 'readwrite');
@@ -45,6 +45,3 @@ function importToIndexedDB(fileName, version = 1) {
       console.error('Error opening IndexedDB');
     };
 }
-  
-
-export default importToIndexedDB;
