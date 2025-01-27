@@ -1,18 +1,21 @@
 import './CardSrc.css';
 import PropTypes from 'prop-types';
 
-function CardSrc ({ word, pronunciation }) {
+function CardSrc ({ src, trg, prn }) {
   return (
     <div className="card">      
-      <p className="text">{word}</p>
-      <p className="text">{pronunciation}</p>
+      <p className="text">{src}</p>
+      <hr />
+      <p className="text">{trg}</p>
+      <p className="text">{prn}</p>
     </div>
   );
 }
 
 CardSrc.propTypes = {
-  word: PropTypes.string.isRequired,        
-  pronunciation: PropTypes.string.isRequired 
+  src: PropTypes.string.isRequired,        
+  trg: PropTypes.string.isRequired, 
+  prn: PropTypes.string.isRequired, 
 };
 
 export default CardSrc;

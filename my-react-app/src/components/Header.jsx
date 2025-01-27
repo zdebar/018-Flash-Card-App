@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="header">
       <Icon />
-      <h1>Corvy</h1>
+      <h1>Ora</h1>
       <nav className='icons-right'>
         <Icon />
         <Icon />

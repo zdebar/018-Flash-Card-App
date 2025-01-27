@@ -6,8 +6,9 @@
 
 .main {
   flex-grow: 1;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 .footer {
@@ -16,7 +17,7 @@
   font-size: 0.9rem;
 }
 
-.container > * {
+/* .container * {
   border: blue 1px dotted;
-}
+} */
 

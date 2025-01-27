@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import CardSrc from "./components/CardSrc";
+import ChoiceBar from './components/ChoiceBar';
 
 function App() {
   return (
@@ -8,13 +9,12 @@ function App() {
       <Header />
       <main className="main">
         <CardSrc 
-          word="Hallo" 
-          pronunciation="HA-lo"
+          src="jedna" 
+          trg="uno"
+          prn="uno"
         />
       </main>
-      <footer className="footer">
-        <p>&copy; 2025 Flashcard App</p>
-      </footer>
+      <ChoiceBar />
     </div>
   );
 }
