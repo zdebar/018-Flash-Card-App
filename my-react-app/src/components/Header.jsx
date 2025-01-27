@@ -1,13 +1,15 @@
 import './Header.css'; // optional, for specific header styles
+import Icon from './Icon';
 
 function Header() {
   return (
-    <header className="app-header">
-      <h1>Flashcard App</h1>
-      <nav>
-        <button>Home</button>
-        <button>Lessons</button>
-        <button>Scores</button>
+    <header className="header">
+      <Icon />
+      <h1>Corvy</h1>
+      <nav className='icons-right'>
+        <Icon />
+        <Icon />
+        <Icon />
       </nav>
     </header>
   );

@@ -1,14 +1,18 @@
 import './App.css';
 import Header from './components/Header';
+import CardSrc from "./components/CardSrc";
 
 function App() {
   return (
-    <div className="app-container">
+    <div className="container">
       <Header />
-      <main className="app-main">
-        <p>Welcome to your flashcard app! Start learning by selecting a lesson.</p>
+      <main className="main">
+        <CardSrc 
+          word="Hallo" 
+          pronunciation="HA-lo"
+        />
       </main>
-      <footer className="app-footer">
+      <footer className="footer">
         <p>&copy; 2025 Flashcard App</p>
       </footer>
     </div>

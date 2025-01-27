@@ -1,18 +1,22 @@
-.app-container {
+.container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
 }
 
-.app-main {
+.main {
   flex-grow: 1;
   padding: 2rem;
   text-align: center;
 }
 
-.app-footer {
+.footer {
   padding: 0.5rem;
   text-align: center;
   font-size: 0.9rem;
 }
+
+.container > * {
+  border: blue 1px dotted;
+}
+
