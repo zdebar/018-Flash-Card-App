@@ -3,12 +3,13 @@
   --card-color: #ffffff;
   --text-color: black;
   --card-border-radius: 10px;
-  --card-color: lightgray;
-  --icon-color: white;
-  --icon-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  --card-src-color: #fcbb53;
+  --card-color:#ffdfab; 
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,9 +18,36 @@
 body {
   font-size: 16px; /* Base size for rem scaling */
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;;
   color: var(--text-color);
-  background: linear-gradient(160deg, #DAEFFF, #ffffff);
-  min-width: 320px;
+  background: linear-gradient(45deg, hsl(270, 40%, 70%), hsl(210, 80%, 60%), hsl(180, 40%, 70%)); /* Pastel Purple, Vivid Blue, Pastel Teal */
+
+  min-width: 320px; 
 }
+
+
+
+button {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  border: none;
+
+  &:hover {
+    outline: 3px solid black;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5) ;
+  }
+  
+  &:active {
+    border: 3px solid black;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+svg {
+  width: 20px;
+  color: rgb(28, 28, 28);
+}
+
 

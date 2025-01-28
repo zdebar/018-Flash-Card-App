@@ -1,26 +1,27 @@
 .choiceBar {
-    display: flex;
-    direction: row;
-    justify-content: space-around;
-    gap: 1px;
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
 }
 
 .choiceBar button {
     flex: 1;
-    padding: 10px;
-    border: none;
     height: 50px;
 
+
+    svg {
+        margin-top: 4px;
+        width: 25px;
+    }
   }
   
 .repeatButton {
-    background-color: var(--icon-color);
     border-radius: 0px 0px 0px var(--card-border-radius);
-    font-size: 1rem;
+    font-size: 1rem;  
+ 
 }
 
 .dontButton {
-    background-color: var(--icon-color);
     border-radius: 0px 0px var(--card-border-radius) 0px;
     font-size: 1rem;
 }

@@ -1,4 +1,4 @@
-import './CardSrc.css';
+import './Card.css';
 import ChoiceBar from './ChoiceBar';
 import PropTypes from 'prop-types';
 
