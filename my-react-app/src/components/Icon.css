@@ -1,15 +1,16 @@
 .icon {
   width: 44px;
-  height: 44px;
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: black 1px dashed;
-  border-radius: 5px;
+  border-radius: 50%;
+  background-color: var(--icon-color);
+
 }
 
 .icon * {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 

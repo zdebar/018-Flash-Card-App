@@ -5,8 +5,7 @@ function Header() {
   return (
     <header className="header">
       <Icon />
-      <h1>Ora</h1>
-      <nav className='icons-right'>
+      <nav className='header__right'>
         <Icon />
         <Icon />
         <Icon />

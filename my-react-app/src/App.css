@@ -1,23 +1,16 @@
-.container {
+.app {
   min-height: 100vh;
+  max-width: 900px;
+  padding: 15px;
+  margin: 0px auto;
+
   display: flex;
   flex-direction: column;
+  
 }
 
-.main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-
-.footer {
-  padding: 0.5rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* .container * {
+/* Test style */
+/* .app * {
   border: blue 1px dotted;
 } */
 

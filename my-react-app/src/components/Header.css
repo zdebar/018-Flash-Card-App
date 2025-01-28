@@ -1,13 +1,12 @@
 .header {
-    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
 }
 
-.icons-right {
+.header__right {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: right;
+    gap: 5px;
 }

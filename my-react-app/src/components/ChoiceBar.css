@@ -1,20 +1,26 @@
 .choiceBar {
     display: flex;
     direction: row;
+    justify-content: space-around;
+    gap: 1px;
 }
 
 .choiceBar button {
     flex: 1;
     padding: 10px;
-    border: black 1px dashed;
-    border-radius: 5px;
+    border: none;
+    height: 50px;
+
   }
   
 .repeatButton {
-    background-color: lightgreen;
-    margin: 10px 5px 10px 10px;
+    background-color: var(--icon-color);
+    border-radius: 0px 0px 0px var(--card-border-radius);
+    font-size: 1rem;
 }
 
 .dontButton {
-    margin: 10px 10px 10px 5px;
+    background-color: var(--icon-color);
+    border-radius: 0px 0px var(--card-border-radius) 0px;
+    font-size: 1rem;
 }
