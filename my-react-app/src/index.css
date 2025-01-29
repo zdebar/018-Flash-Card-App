@@ -4,7 +4,7 @@
   --text-color: black;
   --card-border-radius: 10px;
   --card-src-color: #fcbb53;
-  --card-color:#ffdfab; 
+  --card-color:#fee2b6; 
 }
 
 *,
@@ -20,15 +20,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: var(--text-color);
   background: linear-gradient(45deg, hsl(270, 40%, 70%), hsl(210, 80%, 60%), hsl(180, 40%, 70%)); /* Pastel Purple, Vivid Blue, Pastel Teal */
-
   min-width: 320px; 
 }
 
 
 
 button {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: 0.1s ease-in-out;
   border: none;
@@ -41,13 +40,15 @@ button {
   &:active {
     border: 3px solid black;
     outline: none;
-    box-shadow: none;
+    box-shadow: none;    
+    filter: brightness(95%);
   }
+
 }
 
 svg {
   width: 20px;
-  color: rgb(28, 28, 28);
+  fill: rgb(23, 23, 23);
 }
 
 
