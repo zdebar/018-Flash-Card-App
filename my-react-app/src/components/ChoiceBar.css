@@ -9,13 +9,23 @@
     flex: 1;
     height: 50px;
     background-color: white;
+    box-shadow: var(--box-shadow);
 
-
-    svg {
-        margin-top: 4px;
+    & svg {
         width: 25px;
+        margin-top: 4px;
     }
-  }
+
+    &:hover {
+        background-color: rgb(232, 232, 232);
+    }
+
+    &:active {
+        box-shadow: none;
+        background-color: rgb(210, 210, 210);
+    }
+}
+
   
 .repeatButton {
     border-radius: 0px 0px 0px var(--card-border-radius);

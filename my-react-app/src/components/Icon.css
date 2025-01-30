@@ -1,17 +1,31 @@
 .icon {
   width: 44px;
   aspect-ratio: 1;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   border-radius: 50%;
   background-color: transparent;
-  box-shadow: none;
+
+  & svg {
+    width: 18px;
+  }
+
+  &:hover {
+    outline: 3px solid black; 
+  }
+
+  &:active { 
+
+    backdrop-filter: brightness(0.9);
+  }
 }
 
-.icon * {
-  font-size: 1rem;
-}
+
+
+
 
 
 
