@@ -3,15 +3,13 @@ import Icon from './Icon';
 import IconBell from "./IconBell"
 import IconUser from "./IconUser"
 import IconFolder from "./IconFolder"
-import IconHelp from "./IconHelp"
 
 function Header() {
   return (
     <header className="header">
-      <Icon IconImage={IconHelp} />
+      <Icon IconImage={IconBell}/>
       <nav className='header__right'>
-        <Icon IconImage={IconBell}/>
-        <Icon IconImage={IconFolder}/>
+        <Icon IconImage={IconFolder} style={{ width: "18px" }}/>
         <Icon IconImage={IconUser}/>
       </nav>
     </header>

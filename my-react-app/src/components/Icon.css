@@ -10,18 +10,21 @@
   background-color: transparent;
 
   & svg {
-    width: 18px;
+    width: 20px;
   }
 
   &:hover {
-    outline: 3px solid black; 
-  }
-
-  &:active { 
-
     backdrop-filter: brightness(0.9);
   }
+
+  &:active {     
+    outline: 3px solid black;
+    backdrop-filter: none; 
+  }
 }
+
+
+
 
 
 

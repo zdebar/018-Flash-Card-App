@@ -17,12 +17,14 @@
     }
 
     &:hover {
-        outline: 3px solid black;
+        
+        background-color: rgb(210, 210, 210);
     }
 
     &:active {
         box-shadow: none;
-        background-color: rgb(210, 210, 210);
+        outline: 3px solid black;
+        background-color: white;
     }
 }
 
@@ -32,7 +34,7 @@
  
 }
 
-.dontButton {
+.knownButton {
     border-radius: 0px 0px var(--card-border-radius) 0px;
 }
 

@@ -2,21 +2,22 @@ import PropTypes from 'prop-types';
 import "./Icon.css"; 
 
 
-function Icon( { IconImage }) {
+function Icon( { IconImage, style }) {
   
   if (!IconImage) {
-    return null; // or return a default icon
+    return null; 
   }
   
   return (
     <button className="icon">
-      <IconImage />
+      <IconImage style={style}/>
     </button>
   );
 }
 
 Icon.propTypes = {
-  IconImage: PropTypes.elementType.isRequired,  // Expecting a React component (element type)
+  IconImage: PropTypes.elementType.isRequired,  
+  style: PropTypes.object,
 };
 
 export default Icon;

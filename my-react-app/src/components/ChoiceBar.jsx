@@ -8,7 +8,7 @@ function ChoiceBar() {
       <button className="repeatButton">
         <IconRepeat />
       </button>
-      <button className="dontButton">
+      <button className="knownButton">
         <IconKnown />
       </button>
     </div>
