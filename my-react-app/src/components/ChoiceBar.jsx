@@ -1,13 +1,15 @@
 import "./ChoiceBar.css";
-import RepeatIcon from './RepeatIcon';
+import IconRepeat from './IconRepeat';
+import IconKnown from "./IconKnown";
 
 function ChoiceBar() {
   return (
     <div className="choiceBar">
       <button className="repeatButton">
-        <RepeatIcon />
+        <IconRepeat />
       </button>
       <button className="dontButton">
+        <IconKnown />
       </button>
     </div>
   );

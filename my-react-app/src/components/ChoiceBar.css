@@ -17,7 +17,7 @@
     }
 
     &:hover {
-        background-color: rgb(232, 232, 232);
+        outline: 3px solid black;
     }
 
     &:active {
@@ -29,11 +29,10 @@
   
 .repeatButton {
     border-radius: 0px 0px 0px var(--card-border-radius);
-    font-size: 1rem;  
  
 }
 
 .dontButton {
     border-radius: 0px 0px var(--card-border-radius) 0px;
-    font-size: 1rem;
 }
+
