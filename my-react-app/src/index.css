@@ -19,7 +19,7 @@ body {
   font-size: 16px; /* Base size for rem scaling */
   font-family: 'Open Sans', sans-serif;
   color: var(--text-color);
-  background: linear-gradient(45deg, hsl(270, 40%, 70%), hsl(210, 80%, 60%), hsl(180, 40%, 70%)); /* Pastel Purple, Vivid Blue, Pastel Teal */
+  background: rgb(245, 245, 245); /* Pastel Purple, Vivid Blue, Pastel Teal */
   min-width: 320px; 
 }
 

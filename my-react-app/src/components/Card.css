@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: linear-gradient(45deg, hsl(270, 40%, 70%), hsl(210, 80%, 60%), hsl(180, 40%, 70%));
 
 
     @media only screen and (max-width: 767px) {
@@ -23,12 +24,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--card-src-color);
+    backdrop-filter: brightness(90%);
     border-radius: var(--card-border-radius) var(--card-border-radius) 0px 0px;
 }
 
 .text__trg, .text__prn {
-    background-color: var(--card-color);  
+    /* background-color: var(--card-color);   */
     flex: 1;
     display: flex;
     flex-direction: column;
