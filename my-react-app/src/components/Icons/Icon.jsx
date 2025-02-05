@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'; 
 import "./Icon.css"; 
 
-
-function Icon( { IconImage, style }) {
+export default function Icon( { IconImage, style }) {
   
   if (!IconImage) {
     return null; 
@@ -19,5 +18,3 @@ Icon.propTypes = {
   IconImage: PropTypes.elementType.isRequired,  
   style: PropTypes.object,
 };
-
-export default Icon;

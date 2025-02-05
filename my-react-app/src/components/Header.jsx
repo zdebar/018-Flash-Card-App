@@ -1,26 +1,21 @@
-import './Header.css';
 import { Link } from 'react-router-dom';
-import Icon from './Icon';
-import IconBell from "./IconBell"
-import IconUser from "./IconUser"
-import IconFolder from "./IconFolder"
+import Icon from './Icons/Icon';
+import IconBell from "./Icons/IconBell"
+import IconUser from "./Icons/IconUser"
+import IconLibrary from "./Icons/IconLibrary"
 
-function Header() {
+export default function Header() {
   return (
-    <header className="header">
+    <header className="flex right p1">
       <Link to="/Library">
         <Icon IconImage={IconBell} style={{ width: "23px" }}/>
       </Link>
-      <nav className='header__right'>
-        <Link to="/">        
-          <Icon IconImage={IconFolder} style={{ width: "18px" }}/>
-        </Link>
-        <Link to="/User">
-          <Icon IconImage={IconUser}/>
-        </Link>
-      </nav>
+      <Link to="/">        
+        <Icon IconImage={IconLibrary} style={{ width: "18px" }}/>
+      </Link>
+      <Link to="/User">
+        <Icon IconImage={IconUser}/>
+      </Link>
     </header>
   );
 }
-
-export default Header;

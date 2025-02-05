@@ -2,8 +2,7 @@ import './Card.css';
 import ChoiceBar from './ChoiceBar';
 import PropTypes from 'prop-types';
 
-
-function Card ({ src, trg, prn }) {
+export default function Card ({ src, trg, prn }) {
   return (
     <div className="card">      
       <p className="text__src">{src}</p>
@@ -19,5 +18,3 @@ Card.propTypes = {
   trg: PropTypes.string.isRequired, 
   prn: PropTypes.string.isRequired, 
 };
-
-export default Card;

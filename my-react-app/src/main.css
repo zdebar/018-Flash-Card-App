@@ -1,35 +1,8 @@
 @import url("reset.css");
-
-
-/* Theming Variables */
-:root {
-  /* Cards */
-  --card-color: #ffffff;
-  --text-color: black;
-  --card-border-radius: 10px;
-  --card-src-color: #fcbb53;
-  --card-color:#fee2b6; 
-  
-  /* Icons */
-  --box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-
-/* Basis Styling */
-body {
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-  color: var(--text-color);  
-  min-width: 320px; 
-}
-
-/* Elements Styling */
-button {
-  transition: 0.1s ease-in-out;
-}
+@import url("design.css");
+@import url("layout.css");
 
 /* Test style */
 .app * {
   border: blue 1px dotted;
 }
-

@@ -1,8 +1,8 @@
 import "./ChoiceBar.css";
-import IconRepeat from './IconRepeat';
-import IconKnown from "./IconKnown";
+import IconRepeat from './Icons/IconRepeat';
+import IconKnown from "./Icons/IconKnown";
 
-function ChoiceBar() {
+export default function ChoiceBar() {
   return (
     <div className="choiceBar">
       <button className="repeatButton">
@@ -14,5 +14,3 @@ function ChoiceBar() {
     </div>
   );
 }
-
-export default ChoiceBar;
