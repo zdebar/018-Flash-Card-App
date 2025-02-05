@@ -1,8 +1,5 @@
 .footer {
     margin-top: auto;   
     padding: var(--pad-small);
-    margin-bottom: 10px;
-
-    border: var(--border-secondary);
-    border-radius: var(--border-radius);
+    font-size: 0.8rem;
 }

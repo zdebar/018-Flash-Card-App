@@ -5,14 +5,14 @@
     
     /* Colors */
     --base-color: #ffffff;
-    --text-color: black; /*common text*/
+    --text-color: #00006A;
     --card-src-color: white; /*color for source field */
     --card-color:white; /*color for target and pronunciation field */
     
     /* Borders */
     --border-radius: 3px;
-    --border-primary: black solid 3px;
-    --border-secondary: blue dashed 1px;
+    --border-primary: #00008B solid 2.5px;
+    --border-secondary: #00008B dashed 1px;
 
     /* Gaps */
     --flex-gap: 10px;
@@ -33,7 +33,7 @@ body {
 /* Effects */
 button {
     transition: 0.1s ease-in-out;
-    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
     border: var(--border-secondary);
 }
 

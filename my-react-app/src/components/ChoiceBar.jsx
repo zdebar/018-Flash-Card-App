@@ -6,10 +6,10 @@ export default function ChoiceBar() {
   return (
     <div className="choiceBar">
       <button className="repeatButton">
-        <IconRepeat />
+        <IconRepeat style={{ fill: "var(--text-color)"}}/>
       </button>
       <button className="knownButton">
-        <IconKnown />
+        <IconKnown style={{ fill: "var(--text-color)"}}/>
       </button>
     </div>
   );

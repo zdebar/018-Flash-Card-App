@@ -1,19 +1,15 @@
 .card {
     margin: 150px auto 0px;
     text-align: center;
+    align-self: center;
 
     width: 100%;
     max-width: 500px;
     height: 200px;
-
-    
  
     display: flex;
     flex-direction: column;
-    justify-content: space-between;   
-
-    
-   
+    justify-content: space-between;    
 }
 
 .note {
@@ -24,17 +20,15 @@
     
     border: var(--border-secondary);
     border-radius: var(--border-radius);
-    background: linear-gradient(135deg, #4e80fd 0%, #a0c0f2 100%);
 }
 
 @media (max-width: 767px) {
     .card {
-        margin: 20px auto 0px;
+        margin: 15px auto 0px;
     }
 }
 
 .card p{
-    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +37,7 @@
 .text__src {
     flex: 1.33;
     border-radius: var(--border-radius) var(--border-radius) 0px 0px;
-    border-bottom: 2px solid white;
+    border-bottom: var(--border-primary);
 }
 
 .text__trg, .text__prn {

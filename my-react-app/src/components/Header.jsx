@@ -9,13 +9,13 @@ export default function Header() {
   return (
     <header className="header">
       <Link to="/">
-        <Icon IconImage={IconBell} style={{ width: "20px"}}/>
+        <Icon IconImage={IconBell} style={{ width: "20px", fill: "var(--text-color)"}}/>
       </Link>
       <Link to="/Library">        
-        <Icon IconImage={IconLibrary} style={{ width: "16px"}}/>
+        <Icon IconImage={IconLibrary} style={{ width: "16px", fill: "var(--text-color)"}}/>
       </Link>
       <Link to="/User">
-        <Icon IconImage={IconUser} style={{ width: "19px"}}/>
+        <Icon IconImage={IconUser} style={{ width: "19px", fill: "var(--text-color)"}}/>
       </Link>
     </header>
   );
