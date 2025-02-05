@@ -2,25 +2,17 @@
   width: var(--icon-size);
   aspect-ratio: 1;
   background-color: transparent;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  
+  /* border-radius: 50%; */
 }
 
 .icon svg {
   width: 20px;
 }
-
-.icon:hover {
-  backdrop-filter: var(--hover-effect);
-}
-
-.icon:active {
-  border: 3px solid black;
-  backdrop-filter: none; 
-}
-
 
 
 

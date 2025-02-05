@@ -3,15 +3,16 @@ import Icon from './Icons/Icon';
 import IconBell from "./Icons/IconBell"
 import IconUser from "./Icons/IconUser"
 import IconLibrary from "./Icons/IconLibrary"
+import "./Header.css";
 
 export default function Header() {
   return (
-    <header className="flex right p1">
-      <Link to="/Library">
-        <Icon IconImage={IconBell} style={{ width: "23px" }}/>
+    <header className="header">
+      <Link to="/">
+        <Icon IconImage={IconBell} style={{ width: "22px" }}/>
       </Link>
-      <Link to="/">        
-        <Icon IconImage={IconLibrary} style={{ width: "18px" }}/>
+      <Link to="/Library">        
+        <Icon IconImage={IconLibrary} style={{ width: "16px" }}/>
       </Link>
       <Link to="/User">
         <Icon IconImage={IconUser}/>

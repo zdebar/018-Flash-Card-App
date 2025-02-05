@@ -9,7 +9,7 @@ import Library from './components/Library';
 
 export default function App() {
   return (
-    <div className="app flex-column">
+    <div className="app">
       <Header />
       <Routes>
         <Route path="/" element={<Card src="jedna" trg="uno" prn="uno" />} />
