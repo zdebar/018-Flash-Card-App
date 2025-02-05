@@ -20,12 +20,12 @@
   
 .repeatButton {
     background-color: var(--base-color);
-    border-radius: 0px 0px 0px var(--card-border-radius);
+    border-radius: 0px 0px 0px var(--border-radius);
  
 }
 
 .knownButton {
     background-color: var(--base-color);
-    border-radius: 0px 0px var(--card-border-radius) 0px;
+    border-radius: 0px 0px var(--border-radius) 0px;
 }
 

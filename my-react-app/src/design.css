@@ -13,8 +13,8 @@
     --hover-effect: brightness(0.9);
     
     /* Borders */
-    --card-border-radius: 0px;
-    --border-primary: blue solid 2px;
+    --border-radius: 5px;
+    --border-primary: blue solid 1.5px;
     --border-secondary: blue dashed 1px;
     --box-shadow: none;
 
