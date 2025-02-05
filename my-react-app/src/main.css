@@ -1,11 +1,4 @@
-/* Global Reset */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url("reset.css");
 
 
 /* Theming Variables */
@@ -18,30 +11,25 @@
   --card-color:#fee2b6; 
   
   /* Icons */
-  --box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-  --box-shadow-pressed: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  --box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 
 /* Basis Styling */
 body {
-  font-size: 16px; /* Base size for rem scaling */
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   color: var(--text-color);  
-  background: linear-gradient(45deg, hsl(270, 40%, 70%), hsl(210, 80%, 60%), hsl(180, 40%, 70%)); /* Pastel Purple, Vivid Blue, Pastel Teal */
   min-width: 320px; 
 }
 
-
 /* Elements Styling */
 button {
-  cursor: pointer;
   transition: 0.1s ease-in-out;
-  border: none;
 }
 
 /* Test style */
-/* .app * {
+.app * {
   border: blue 1px dotted;
-} */
+}
 

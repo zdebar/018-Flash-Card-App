@@ -8,14 +8,14 @@ import IconFolder from "./IconFolder"
 function Header() {
   return (
     <header className="header">
-      <Link to="/library">
-        <Icon IconImage={IconFolder} style={{ width: "18px" }}/>
+      <Link to="/Library">
+        <Icon IconImage={IconBell} style={{ width: "23px" }}/>
       </Link>
       <nav className='header__right'>
-        <Link to="/">          
-          <Icon IconImage={IconBell} style={{ width: "23px" }}/>
+        <Link to="/">        
+          <Icon IconImage={IconFolder} style={{ width: "18px" }}/>
         </Link>
-        <Link to="/user">
+        <Link to="/User">
           <Icon IconImage={IconUser}/>
         </Link>
       </nav>
