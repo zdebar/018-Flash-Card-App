@@ -6,8 +6,7 @@
 }
 
 .choiceBar > button {
-    height: 50px;    
-    box-shadow: var(--box-shadow);
+    height: 50px;  
     
     display: flex;
     justify-content: center;
@@ -16,6 +15,7 @@
 
 .choiceBar > button > svg {
     width: 25px;
+
 }
   
 .repeatButton {

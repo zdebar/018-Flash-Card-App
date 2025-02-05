@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 export default function Card ({ src, trg, prn }) {
   return (
     <div className="card">      
-      <p className="text__src">{src}</p>
-      <p className="text__trg">{trg}</p>
-      <p className="text__prn">[ {prn} ]</p>
+      <div className='note'>
+        <p className="text__src">{src}</p>
+        <p className="text__trg">{trg}</p>
+        <p className="text__prn">[ {prn} ]</p>
+      </div>
       <ChoiceBar />
     </div>
   );

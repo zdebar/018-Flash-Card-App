@@ -3,6 +3,10 @@
     flex-direction: row;
     justify-content: right;
     gap: var(--flex-gap);
+    
     padding: var(--pad-small);
     margin-top: 10px;
+
+    border: var(--border-secondary);
+    border-radius: var(--border-radius);
 }
