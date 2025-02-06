@@ -1,31 +1,20 @@
 .choiceBar {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--button-gap);
-    padding-top: var(--button-gap);
+    padding-top: 5px;
 }
 
 .choiceBar > button {
-    height: 50px;  
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50px; 
 }
 
-.choiceBar > button > svg {
+.choiceBar svg {
     width: 25px;
-
 }
   
 .repeatButton {
-    background-color: var(--base-color);
     border-radius: 0px 0px 0px var(--border-radius);
- 
 }
 
 .knownButton {
-    background-color: var(--base-color);
     border-radius: 0px 0px var(--border-radius) 0px;
 }
 

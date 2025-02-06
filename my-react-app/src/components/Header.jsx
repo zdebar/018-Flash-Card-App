@@ -7,7 +7,7 @@ import "./Header.css";
 
 export default function Header() {
   return (
-    <header className="header">
+    <header className="header flex-right p-1 border">
       <Link to="/">
         <Icon IconImage={IconBell} style={{ width: "20px", fill: "var(--text-color)"}}/>
       </Link>
