@@ -10,7 +10,7 @@
     --card-color:white; /*color for target and pronunciation field */
     
     /* Borders */
-    --border-radius: 3px;
+    --border-radius: 5px;
     --border-primary: #00008B solid 2.5px;
     --border-secondary: #00008B dashed 1px;
 
@@ -32,7 +32,7 @@ body {
 
 /* Effects */
 button {
-    transition: 0.1s ease-in-out;
+    transition: 0.3s ease-in-out;
     box-shadow: 2px 2px 0px rgb(0, 0, 0, 0.3);
     border: var(--border-secondary);
 }
