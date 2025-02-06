@@ -8,7 +8,7 @@ export default function Icon( { IconImage, style }) {
   }
   
   return (
-    <button className="icon flex-center border">
+    <button className="icon flex justify-center align-center border">
       <IconImage style={style}/>
     </button>
   );

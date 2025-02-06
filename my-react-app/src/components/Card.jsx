@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 export default function Card ({ src, trg, prn }) {
   return (
-    <div className="card flex-column-between">      
-      <div className='note flex-column-between border'>
-        <p className="text__src flex-column-center">{src}</p>
-        <p className="text__trg flex-column-center">{trg}</p>
-        <p className="text__prn flex-column-center">[ {prn} ]</p>
+    <div className="card flex-column justify-between">      
+      <div className='note flex-column justify-between align-center border'>
+        <p className="text__src flex-column justify-center">{src}</p>
+        <p className="text__trg flex-column justify-center">{trg}</p>
+        <p className="text__prn flex-column justify-center">[ {prn} ]</p>
       </div>
       <ChoiceBar />
     </div>

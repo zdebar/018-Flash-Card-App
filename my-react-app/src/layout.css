@@ -42,33 +42,35 @@ button:active {
     padding: 10px;
 }
 
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-right {
+.flex {
     display: flex;
     flex-direction: row;
-    justify-content: right;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-right {
+    justify-content: flex-end;
+}
+
+.align-center {
+    align-items: center;
+    text-align: center;
+}
+
+.gap-2 {
     gap: 10px;
-}
-
-.flex-column-between {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    text-align: center;
-    align-self: center;  
-}
-
-.flex-column-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    text-align: center;
-    align-self: center;  
 }
 
 .grid {
