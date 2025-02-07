@@ -6,7 +6,7 @@ export default function Library() {
     const [error, setError] = useState(null); 
 
     useEffect(() => {
-        const CACHE_EXPIRY_TIME = 24 * 60 * 60 * 1000;
+        const CACHE_EXPIRY_TIME = 24 * 60 * 60 * 1000; // check every 24 hours for update
 
         const fetchLectures = async () => {
             // local storage
@@ -39,7 +39,6 @@ export default function Library() {
         };
 
         fetchLectures();
-        console.log('Lectures fetched');
     }, []);
 
     if (loading) {
@@ -54,11 +53,9 @@ export default function Library() {
         <div>
             <ul>
                 {lectures.map((lecture) => (
-                <li key={lecture.id}>
-                    <button onClick={() => handleLectureClick(lecture.id)}>
+                    <li key={lecture.id}>
                         {lecture.id} : {lecture.name}
-                    </button>
-                </li>
+                    </li>
                 ))}
             </ul>
         </div>
