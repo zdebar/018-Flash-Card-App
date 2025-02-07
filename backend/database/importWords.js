@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import sqlite3 from 'sqlite3';
 
 // Path to the database
-const dbPath = './cz-esp-01.db';
+const dbPath = '../data/cz-esp-01.db';
 
 // Check if the database file exists
 if (!fs.existsSync(dbPath)) {
@@ -46,7 +46,7 @@ const insertWords = (data) => {
 };
 
 // Call to process CSV files
-readCSV('./words.csv', insertWords);
+readCSV('../data/words.csv', insertWords);
 
 // Close the database connection after the operation
 db.close((err) => {

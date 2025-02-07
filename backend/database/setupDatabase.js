@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Define the database file path
-const dbPath = path.resolve('./cz-esp-01.db');
+const dbPath = path.resolve('../data/cz-esp-01.db');
 
 // Check if the database file exists
 fs.access(dbPath, fs.constants.F_OK, (err) => {
