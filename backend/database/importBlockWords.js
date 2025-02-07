@@ -41,41 +41,27 @@ const insertBlockWords = (data) => {
     const stmt = db.prepare('INSERT INTO block_words (block_id, word_id) VALUES (?, ?)');
 
     data.forEach(row => {
-        // Ensure that both block_id and word_id exist in their respective tables
         const blockId = row.block_id;
         const wordId = row.word_id;
 
-        // Check if block_id exists in the blocks table
-        db.get('SELECT id FROM blocks WHERE id = ?', [blockId], (err, block) => {
+        // Insert data into the block_words table
+        stmt.run(blockId, wordId, (err) => {
             if (err) {
-                console.error('Error checking block_id:', err.message);
-                return;
+                console.error(`Error inserting block_word: block_id = ${blockId}, word_id = ${wordId}:`, err.message);
+            } else {
+                console.log(`Inserted block_word: block_id = ${blockId}, word_id = ${wordId}`);
             }
-
-            // Check if word_id exists in the words table
-            db.get('SELECT id FROM words WHERE id = ?', [wordId], (err, word) => {
-                if (err) {
-                    console.error('Error checking word_id:', err.message);
-                    return;
-                }
-
-                if (block && word) {
-                    // Insert into block_words if both block_id and word_id exist
-                    stmt.run(blockId, wordId, (err) => {
-                        if (err) {
-                            console.error('Error inserting block_word:', err.message);
-                        } else {
-                            console.log(`Inserted block_word: block_id = ${blockId}, word_id = ${wordId}`);
-                        }
-                    });
-                } else {
-                    console.log(`Skipping: block_id = ${blockId} or word_id = ${wordId} does not exist.`);
-                }
-            });
         });
     });
 
-    stmt.finalize();
+    // Finalize the statement after all insertions
+    stmt.finalize((err) => {
+        if (err) {
+            console.error('Error finalizing statement:', err.message);
+        } else {
+            console.log('Statement finalized successfully');
+        }
+    });
 };
 
 // Call to process CSV files
