@@ -61,6 +61,25 @@ app.get("/api/lecture/:lectureId/blocks", (req, res) => {
   );
 });
 
+app.get("/api/block/:blockId/words", (req, res) => {
+  const { blockId } = req.params;
+
+  db.all(
+      `SELECT words.id, words.src, words.trg, words.prn
+       FROM words
+       JOIN block_words ON words.id = block_words.word_id
+       WHERE block_words.block_id = ?`,
+      [blockId],
+      (err, rows) => {
+          if (err) {
+              console.error("Error querying database:", err);
+              return res.status(500).json({ error: "Database query failed" });
+          }
+          res.json(rows);
+      }
+  );
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
