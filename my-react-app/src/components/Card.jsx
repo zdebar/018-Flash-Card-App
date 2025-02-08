@@ -1,8 +1,11 @@
 import './Card.css';
 import ChoiceBar from './ChoiceBar';
+import RevealButton from './RevealButton';
 import PropTypes from 'prop-types';
 
 export default function Card ({ src, trg, prn }) {
+  const showRevealButton = true;
+
   return (
     <div className="card flex-column justify-between">      
       <div className='note flex-column justify-between align-center border'>
@@ -10,7 +13,7 @@ export default function Card ({ src, trg, prn }) {
         <p className="text__trg flex-column justify-center">{trg}</p>
         <p className="text__prn flex-column justify-center">[ {prn} ]</p>
       </div>
-      <ChoiceBar />
+      {showRevealButton ? <RevealButton /> : <ChoiceBar />}
     </div>
   );
 }

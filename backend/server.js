@@ -25,7 +25,8 @@ app.get('/user', (req, res) => {
   res.send('User route');
 });
 
-// API Endpoint
+// API Endpoints
+// Lectures lists
 app.get("/api/lectures", (req, res) => {
   db.all("SELECT id, name FROM lectures", (err, rows) => {
     if (err) {
@@ -36,6 +37,7 @@ app.get("/api/lectures", (req, res) => {
   });
 });
 
+// All Blocks lists
 app.get("/api/blocks", (req, res) => {
   db.all("SELECT id, name FROM blocks", (err, rows) => {
     if (err) {
@@ -46,6 +48,7 @@ app.get("/api/blocks", (req, res) => {
   });
 });
 
+// Blocs in given lecture
 app.get("/api/lecture/:lectureId/blocks", (req, res) => {
   const { lectureId } = req.params;
 
@@ -65,6 +68,7 @@ app.get("/api/lecture/:lectureId/blocks", (req, res) => {
   );
 });
 
+// Words in given block
 app.get("/api/block/:blockId/words", (req, res) => {
   const { blockId } = req.params;
 
@@ -84,6 +88,7 @@ app.get("/api/block/:blockId/words", (req, res) => {
   );
 });
 
+// Blocks and Words in given lecture
 app.get("/api/lecture/:lectureId", (req, res) => {
   const { lectureId } = req.params;
 

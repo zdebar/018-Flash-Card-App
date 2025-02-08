@@ -1,5 +1,5 @@
 .choiceBar {
-  padding-top: 5px;
+  padding-top: var(--button-gap);
 }
 
 .choiceBar > button {
