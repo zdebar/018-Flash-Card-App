@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Card from "./components/Card";
 import User from './components/User';
 import Library from './components/Library';
+import jsonData from './test-data/lecture1.json';
 
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
     <div className="app">
       <Header />
       <Routes>
-        <Route path="/" element={<Card src="jedna" trg="uno" prn="uno" />} />
+        <Route path="/" element={<Card words={jsonData.blocks[0]?.words} />} />
         <Route path="/library" element={<Library />} />
         <Route path="/user" element={<User />} /> 
       </Routes>
