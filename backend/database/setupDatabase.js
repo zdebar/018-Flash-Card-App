@@ -1,36 +1,36 @@
-import sqlite3 from 'sqlite3';
-import fs from 'fs';
-import path from 'path';
+import sqlite3 from "sqlite3";
+import fs from "fs";
+import path from "path";
 
 // Define the database file path
-const dbPath = path.resolve('../data/cz-esp-01.db');
+const dbPath = path.resolve("../data/cz-esp-01.db");
 
 // Check if the database file exists
 fs.access(dbPath, fs.constants.F_OK, (err) => {
-    if (err) {
-        // Database doesn't exist, proceed with setup
-        console.log("Database does not exist, creating new database and schema...");
-        setupDatabase();
-    } else {
-        // Database already exists, skip setup
-        console.log("Database already exists, skipping setup.");
-    }
+  if (err) {
+    // Database doesn't exist, proceed with setup
+    console.log("Database does not exist, creating new database and schema...");
+    setupDatabase();
+  } else {
+    // Database already exists, skip setup
+    console.log("Database already exists, skipping setup.");
+  }
 });
 
 // Function to set up the database schema
 const setupDatabase = () => {
-    // Create a new SQLite database or open the existing one
-    const db = new sqlite3.Database(dbPath, (err) => {
-        if (err) {
-            console.error("Error opening database", err.message);
-        } else {
-            console.log("Database connected successfully");
-        }
-    });
+  // Create a new SQLite database or open the existing one
+  const db = new sqlite3.Database(dbPath, (err) => {
+    if (err) {
+      console.error("Error opening database", err.message);
+    } else {
+      console.log("Database connected successfully");
+    }
+  });
 
-    db.serialize(() => {
-        // Create the words table
-        db.run(`
+  db.serialize(() => {
+    // Create the words table
+    db.run(`
             CREATE TABLE IF NOT EXISTS words (
                 id INTEGER PRIMARY KEY,
                 src TEXT NOT NULL,
@@ -39,8 +39,8 @@ const setupDatabase = () => {
             )
         `);
 
-        // Create the history table
-        db.run(`
+    // Create the history table
+    db.run(`
             CREATE TABLE IF NOT EXISTS history (
                 id INTEGER PRIMARY KEY,
                 word_id INTEGER NOT NULL,
@@ -50,24 +50,24 @@ const setupDatabase = () => {
             )
         `);
 
-        // Create the lectures table
-        db.run(`
+    // Create the lectures table
+    db.run(`
             CREATE TABLE IF NOT EXISTS lectures (
                 id INTEGER PRIMARY KEY,
                 name TEXT NOT NULL
             )
         `);
 
-        // Create the block table
-        db.run(`
+    // Create the block table
+    db.run(`
             CREATE TABLE IF NOT EXISTS blocks (
                 id INTEGER PRIMARY KEY,
                 name TEXT NOT NULL
             )
         `);
 
-        // Create lecture_block linking table
-        db.run(`
+    // Create lecture_block linking table
+    db.run(`
             CREATE TABLE IF NOT EXISTS lecture_blocks (
                 lecture_id INTEGER,
                 block_id INTEGER,
@@ -77,8 +77,8 @@ const setupDatabase = () => {
             )
         `);
 
-        // Create block_words linking table
-        db.run(`
+    // Create block_words linking table
+    db.run(`
             CREATE TABLE IF NOT EXISTS block_words (
                 block_id INTEGER NOT NULL,
                 word_id INTEGER NOT NULL,
@@ -88,8 +88,8 @@ const setupDatabase = () => {
             )
         `);
 
-        // Create the score table
-        db.run(`
+    // Create the score table
+    db.run(`
             CREATE TABLE IF NOT EXISTS score (
                 id INTEGER PRIMARY KEY,
                 word_id INTEGER NOT NULL,
@@ -99,16 +99,16 @@ const setupDatabase = () => {
                 CONSTRAINT unique_word_id UNIQUE (word_id)
             )
         `);
-    });
+  });
 
-    console.log('Database setup complete');
-    
-    // Close the database connection
-    db.close((err) => {
-        if (err) {
-            console.error("Error closing database", err.message);
-        } else {
-            console.log("Database connection closed");
-        }
-    });
+  console.log("Database setup complete");
+
+  // Close the database connection
+  db.close((err) => {
+    if (err) {
+      console.error("Error closing database", err.message);
+    } else {
+      console.log("Database connection closed");
+    }
+  });
 };
