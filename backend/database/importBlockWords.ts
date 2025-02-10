@@ -1,9 +1,9 @@
 import fs from "fs";
 import Papa from "papaparse";
-import sqlite3 from "sqlite3";
+import sqlite3, { Database, Statement } from "sqlite3";
 
 // Path to the database
-const dbPath = "../data/cz-esp-01.db";
+const dbPath: string = "../data/cz-esp-01.db";
 
 // Check if the database file exists
 if (!fs.existsSync(dbPath)) {
@@ -12,7 +12,7 @@ if (!fs.existsSync(dbPath)) {
 }
 
 // Initialize DB
-const db = new sqlite3.Database(dbPath, (err) => {
+const db: Database = new sqlite3.Database(dbPath, (err: Error | null) => {
   if (err) {
     console.error("Error opening database:", err.message);
     process.exit(1);
@@ -21,14 +21,20 @@ const db = new sqlite3.Database(dbPath, (err) => {
   }
 });
 
+// Define type for CSV row data
+interface BlockWordRow {
+  block_id: number;
+  word_id: number;
+}
+
 // Function to read and parse CSV
-const readCSV = (filePath, callback) => {
-  const file = fs.readFileSync(filePath, "utf-8");
+const readCSV = (filePath: string, callback: (data: BlockWordRow[]) => void): void => {
+  const file: string = fs.readFileSync(filePath, "utf-8");
   Papa.parse(file, {
     header: true,
     skipEmptyLines: true,
     complete: (result) => {
-      callback(result.data);
+      callback(result.data as BlockWordRow[]);
     },
     error: (err) => {
       console.error("Error parsing CSV:", err.message);
@@ -37,32 +43,29 @@ const readCSV = (filePath, callback) => {
 };
 
 // Function to insert block_words
-const insertBlockWords = (data) => {
-  const stmt = db.prepare(
+const insertBlockWords = (data: BlockWordRow[]): void => {
+  const stmt: Statement = db.prepare(
     "INSERT INTO block_words (block_id, word_id) VALUES (?, ?)"
   );
 
   data.forEach((row) => {
-    const blockId = row.block_id;
-    const wordId = row.word_id;
+    const { block_id, word_id } = row;
 
     // Insert data into the block_words table
-    stmt.run(blockId, wordId, (err) => {
+    stmt.run(block_id, word_id, (err: Error | null) => {
       if (err) {
         console.error(
-          `Error inserting block_word: block_id = ${blockId}, word_id = ${wordId}:`,
+          `Error inserting block_word: block_id = ${block_id}, word_id = ${word_id}:`,
           err.message
         );
       } else {
-        console.log(
-          `Inserted block_word: block_id = ${blockId}, word_id = ${wordId}`
-        );
+        console.log(`Inserted block_word: block_id = ${block_id}, word_id = ${word_id}`);
       }
     });
   });
 
   // Finalize the statement after all insertions
-  stmt.finalize((err) => {
+  stmt.finalize((err: Error | null) => {
     if (err) {
       console.error("Error finalizing statement:", err.message);
     } else {
@@ -75,7 +78,7 @@ const insertBlockWords = (data) => {
 readCSV("../data/block_words.csv", insertBlockWords);
 
 // Close the database connection after the operation
-db.close((err) => {
+db.close((err: Error | null) => {
   if (err) {
     console.error("Error closing database", err.message);
   } else {

@@ -3,10 +3,10 @@ import fs from "fs";
 import path from "path";
 
 // Define the database file path
-const dbPath = path.resolve("../data/cz-esp-01.db");
+const dbPath: string = path.resolve("../data/cz-esp-01.db");
 
 // Check if the database file exists
-fs.access(dbPath, fs.constants.F_OK, (err) => {
+fs.access(dbPath, fs.constants.F_OK, (err: NodeJS.ErrnoException | null) => {
   if (err) {
     // Database doesn't exist, proceed with setup
     console.log("Database does not exist, creating new database and schema...");
@@ -18,15 +18,18 @@ fs.access(dbPath, fs.constants.F_OK, (err) => {
 });
 
 // Function to set up the database schema
-const setupDatabase = () => {
+const setupDatabase = (): void => {
   // Create a new SQLite database or open the existing one
-  const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-      console.error("Error opening database", err.message);
-    } else {
-      console.log("Database connected successfully");
+  const db: sqlite3.Database = new sqlite3.Database(
+    dbPath,
+    (err: Error | null) => {
+      if (err) {
+        console.error("Error opening database", err.message);
+      } else {
+        console.log("Database connected successfully");
+      }
     }
-  });
+  );
 
   db.serialize(() => {
     // Create the words table
@@ -104,7 +107,7 @@ const setupDatabase = () => {
   console.log("Database setup complete");
 
   // Close the database connection
-  db.close((err) => {
+  db.close((err: Error | null) => {
     if (err) {
       console.error("Error closing database", err.message);
     } else {

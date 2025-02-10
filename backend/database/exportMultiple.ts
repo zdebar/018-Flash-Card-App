@@ -1,23 +1,26 @@
-// Export tables : lectures, blocks, lecture_blocks
-
 import fs from "fs";
 import Papa from "papaparse";
-import sqlite3 from "sqlite3";
+import sqlite3, { Database } from "sqlite3";
 
 // Initialize DB
-const db = new sqlite3.Database("../data/cz-esp-01.db");
+const db: Database = new sqlite3.Database("../data/cz-esp-01.db");
+
+// Define a type for the rows returned from the database
+interface Row {
+  [key: string]: string | number; // Rows are dynamic, but can contain string or number values
+}
 
 // Function to export table to CSV
-const exportTableToCSV = (tableName, filePath, query) => {
-  db.all(query, (err, rows) => {
+const exportTableToCSV = (tableName: string, filePath: string, query: string): void => {
+  db.all(query, (err: Error | null, rows: Row[]) => {
     if (err) {
       console.error(`Error fetching data from ${tableName}:`, err.message);
       return;
     }
 
-    const csv = Papa.unparse(rows);
+    const csv: string = Papa.unparse(rows);
 
-    fs.writeFile(filePath, csv, (err) => {
+    fs.writeFile(filePath, csv, (err: NodeJS.ErrnoException | null) => {
       if (err) {
         console.error(`Error writing ${tableName} CSV to file:`, err.message);
       } else {
@@ -45,7 +48,7 @@ exportTableToCSV(
 );
 
 // Close the database connection
-db.close((err) => {
+db.close((err: Error | null) => {
   if (err) {
     console.error("Error closing database:", err.message);
   } else {
